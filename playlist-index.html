@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>VideoJS Playlist demo</title>
+
+<link href="css/video-js.css" rel="stylesheet" type="text/css">
+<link href="css/videojs-playlist-ui.vertical.css" rel="stylesheet">
+<link href="css/video-js.index.css" rel="stylesheet" type="text/css">
+<link href="css/video-js-style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<script src="js/video.js"></script>
+<script src="js/videojs-playlist.js"></script>
+<script src="js/videojs-playlist-ui.js"></script>
+
+<div class="main-preview-player">
+<video  class="video-js  vjs-fluid vjs-theme-sea "  
+    id="id-playlist-demo-id"
+    controls preload="auto"
+    width="464" 
+    height="848"
+    data-setup='{ "playbackRates": [1, 1.5, 2, 2.5, 3]  }'>
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+</video>
+
+    <div class="playlist-container  preview-player-dimensions vjs-fluid">
+        <ol class="vjs-playlist"></ol>
+    </div>
+
+<script>
+   var player_vs = videojs('id-playlist-demo-id');
+   player_vs.playlistUi();
+
+player_vs.playlist([
+{
+  name: 'Sintel',
+  description: '',
+  duration: 888,
+  sources: [
+  {  src: 'http://media.w3.org/2010/05/sintel/trailer.mp4', type: 'video/mp4' } ],
+  poster: 'http://media.w3.org/2010/05/sintel/poster.png',
+  thumbnail: [
+  {
+          srcset: 'http://media.w3.org/2010/05/sintel/poster.png',
+          type: 'image/png',
+          media: '(min-width: 300px;)'
+  },
+  {
+          src: 'http://media.w3.org/2010/05/sintel/poster.png'
+  }]
+},
+{
+  name: 'Disney\'s Oceans',
+  description: '',
+  duration: 46,
+  sources: [
+  {  src: 'http://vjs.zencdn.net/v/oceans.mp4', type: 'video/mp4' } ],
+  poster: 'http://vjs.zencdn.net/v/oceans.png',
+  thumbnail: [
+  {
+          srcset: 'http://vjs.zencdn.net/v/oceans.png',
+          type: 'image/png',
+          media: '(min-width: 300px;)'
+  },
+  {
+          src: 'http://vjs.zencdn.net/v/oceans.png'
+  }]
+},
+{
+  name: 'Elephant\'s Dream ',
+  description: '',
+  duration: 653.8,
+  sources: [
+  {  src: 'https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4', type: 'video/mp4' } ],
+  thumbnail: [
+  {
+          srcset: 'https://d2zihajmogu5jn.cloudfront.net/elephantsdream/poster.png',
+          type: 'image/png',
+          media: '(min-width: 300px;)'
+  },
+  {
+          src: 'https://d2zihajmogu5jn.cloudfront.net/elephantsdream/poster.png'
+  }]
+},
+{
+  name: 'Tears of Steel',
+  description: '',
+  duration: 734,
+  sources: [
+  {  src: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8', type: 'video/x-mpegURL' } ],
+  thumbnail: [
+  {
+          srcset: 'https://d2zihajmogu5jn.cloudfront.net/tears-of-steel/tears_of_steel.jpg',
+          type: 'image/x-mpegURL',
+          media: '(min-width: 300px;)'
+  },
+  {
+          src: 'https://d2zihajmogu5jn.cloudfront.net/tears-of-steel/tears_of_steel.jpg'
+  }]
+},
+{
+  name: 'Live Akamai',
+  description: '',
+  duration: 635,
+  sources: [
+  {  src: 'https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8', type: 'video/x-mpegURL' } ],
+  thumbnail: [
+  {
+          srcset: 'https://d2zihajmogu5jn.cloudfront.net/tears-of-steel/tears_of_steel.jpg',
+          type: 'image/x-mpegURL',
+          media: '(min-width: 300px;)'
+  },
+  {
+          src: 'https://d2zihajmogu5jn.cloudfront.net/tears-of-steel/tears_of_steel.jpg'
+  }]
+},
+]);
+</script>
+</div>
+</body>
+</html>
